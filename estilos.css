@@ -1,0 +1,412 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 15px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, rgba(0, 255, 255, 0.22), transparent 30%),
+        linear-gradient(135deg, #020617, #0f172a, #111827);
+    color: #e5faff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Fondo animado */
+body::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(0, 255, 255, 0.04) 0px,
+            rgba(0, 255, 255, 0.04) 1px,
+            transparent 1px,
+            transparent 60px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            rgba(0, 255, 255, 0.04) 0px,
+            rgba(0, 255, 255, 0.04) 1px,
+            transparent 1px,
+            transparent 60px
+        );
+    animation: moverFondo 20s linear infinite;
+    z-index: -2;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: rgba(0, 245, 255, 0.12);
+    filter: blur(90px);
+    border-radius: 50%;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 680px;
+    max-height: 92vh;
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+    background: rgba(2, 6, 23, 0.92);
+    border: 2px solid #00f5ff;
+    border-radius: 20px;
+    box-shadow:
+        0 0 25px rgba(0, 245, 255, 0.45),
+        inset 0 0 20px rgba(0, 245, 255, 0.08);
+    animation: aparecer 0.8s ease;
+    overflow: hidden;
+}
+
+h1 {
+    color: #00f5ff;
+    text-shadow:
+        0 0 10px #00f5ff,
+        0 0 25px rgba(0, 245, 255, 0.8);
+    letter-spacing: 2px;
+    margin: 5px 0;
+    font-size: clamp(22px, 4vw, 32px);
+    text-transform: uppercase;
+}
+
+h2 {
+    color: #ff3b81;
+    text-shadow: 0 0 10px rgba(255, 59, 129, 0.8);
+    font-size: clamp(16px, 3vw, 22px);
+    margin: 8px 0;
+}
+
+h3 {
+    color: #7dd3fc;
+    margin: 6px 0;
+}
+
+.historia {
+    line-height: 1.45;
+    font-size: clamp(14px, 2.2vw, 16px);
+    margin: 8px 0;
+    animation: parpadeoTexto 4s infinite alternate;
+}
+
+.alerta {
+    margin: 14px auto;
+    padding: 10px;
+    border-radius: 12px;
+    background: rgba(255, 59, 129, 0.15);
+    border: 1px solid #ff3b81;
+    color: #ffd6e5;
+    box-shadow: 0 0 15px rgba(255, 59, 129, 0.35);
+}
+
+.estado-sistema,
+#temporizador {
+    display: inline-block;
+    margin: 8px auto;
+    padding: 8px 14px;
+    border-radius: 10px;
+    color: #a7f3d0;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid #10b981;
+}
+
+#temporizador {
+    color: #00f5ff;
+    border-color: #00f5ff;
+    box-shadow: 0 0 12px rgba(0, 245, 255, 0.4);
+}
+
+#temporizador.peligro {
+    color: #ff3b81;
+    border-color: #ff3b81;
+    animation: alertaTiempo 0.4s infinite alternate;
+}
+
+.pista {
+    margin: 14px 0;
+    padding: 15px;
+    background: rgba(15, 23, 42, 0.95);
+    border: 2px solid #22c55e;
+    border-radius: 18px;
+    box-shadow: 0 0 22px rgba(34, 197, 94, 0.35);
+}
+
+.pista p {
+    font-size: clamp(14px, 2.4vw, 17px);
+    line-height: 1.45;
+    margin: 8px 0;
+}
+
+input[type="text"] {
+    width: 85%;
+    padding: 11px;
+    margin: 8px 0 12px;
+    border: 2px solid #00f5ff;
+    border-radius: 12px;
+    background: #020617;
+    color: #e5faff;
+    font-size: 15px;
+    text-align: center;
+    outline: none;
+    box-shadow: 0 0 12px rgba(0, 245, 255, 0.25);
+}
+
+input[type="text"]:focus {
+    border-color: #ff3b81;
+    box-shadow: 0 0 18px rgba(255, 59, 129, 0.55);
+}
+
+button,
+.boton {
+    display: inline-block;
+    padding: 11px 20px;
+    background: linear-gradient(135deg, #00f5ff, #22c55e);
+    color: #020617;
+    border: none;
+    border-radius: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 0 18px rgba(0, 245, 255, 0.55);
+    transition: 0.3s;
+}
+
+button:hover,
+.boton:hover {
+    transform: scale(1.06);
+    background: linear-gradient(135deg, #ff3b81, #00f5ff);
+    color: white;
+    box-shadow: 0 0 25px rgba(255, 59, 129, 0.75);
+}
+
+.volver {
+    display: block;
+    margin-top: 14px;
+    color: #93c5fd;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.volver:hover {
+    color: #00f5ff;
+    text-shadow: 0 0 8px #00f5ff;
+}
+
+.mensaje {
+    margin: 12px auto;
+    padding: 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.exito {
+    background: rgba(34, 197, 94, 0.18);
+    border: 1px solid #22c55e;
+    color: #bbf7d0;
+}
+
+.error {
+    background: rgba(239, 68, 68, 0.18);
+    border: 1px solid #ef4444;
+    color: #fecaca;
+}
+
+.exito-final {
+    background: rgba(34, 197, 94, 0.18);
+    border: 1px solid #22c55e;
+    color: #bbf7d0;
+}
+
+/* Pantalla de carga */
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #020617;
+    color: #00f5ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: 0.6s;
+}
+
+.loader-text {
+    font-size: clamp(18px, 4vw, 24px);
+    letter-spacing: 3px;
+    text-align: center;
+    text-shadow: 0 0 20px #00f5ff;
+    animation: glitch 0.8s infinite;
+}
+
+/* Texto superior */
+.ojo-nemesis {
+    position: fixed;
+    top: 18px;
+    right: 25px;
+    color: #ff3b81;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 12px #ff3b81;
+    animation: parpadeoOjo 2s infinite;
+}
+
+/* Partículas */
+.particulas span {
+    position: fixed;
+    bottom: -20px;
+    width: 4px;
+    height: 4px;
+    background: #00f5ff;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #00f5ff;
+    animation: subirParticula linear infinite;
+    z-index: -1;
+}
+
+/* Colores por nivel */
+
+
+/* Animaciones */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes moverFondo {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-60px, -60px);
+    }
+}
+
+@keyframes parpadeoTexto {
+    from {
+        opacity: 0.92;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes subirParticula {
+    from {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+@keyframes glitch {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(2px);
+        color: #ff3b81;
+    }
+
+    50% {
+        transform: translateX(-2px);
+        color: #00f5ff;
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes parpadeoOjo {
+    0%, 100% {
+        opacity: 0.25;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes alertaTiempo {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+}
+
+@keyframes alertaFinal {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.01);
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .contenedor {
+        width: 95%;
+        max-height: 94vh;
+        padding: 16px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+
+    button,
+    .boton {
+        width: 100%;
+    }
+
+    .ojo-nemesis {
+        position: static;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+}
