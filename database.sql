@@ -1,13 +1,18 @@
-CREATE DATABASE IF NOT EXISTS escape_room;
-USE escape_room;
+-- CREATE DATABASE IF NOT EXISTS escape_room
+-- CHARACTER SET utf8mb4
+-- COLLATE utf8mb4_unicode_ci;
 
-CREATE TABLE IF NOT EXISTS pistas (
+-- USE escape_room;
+
+DROP TABLE IF EXISTS pistas;
+
+CREATE TABLE pistas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     pregunta TEXT NOT NULL,
     respuesta VARCHAR(100) NOT NULL,
     mensaje_exito TEXT NOT NULL,
     orden INT NOT NULL
-);
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 INSERT INTO pistas (pregunta, respuesta, mensaje_exito, orden)
 VALUES
