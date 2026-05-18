@@ -20,7 +20,7 @@ VALUES
 (
 '⚠️ NÉMESIS ha bloqueado el núcleo principal.
 
-Descrube: Soy la estructura base de toda página web.
+Descubre: Soy la estructura base de toda página web.
 Sin mí, las etiquetas no tendrían orden ni existiría contenido.
 ¿Quién soy?',
 'HTML',
@@ -31,7 +31,7 @@ Sin mí, las etiquetas no tendrían orden ni existiría contenido.
 (
 '🎨 NÉMESIS intenta ocultar la interfaz del sistema.
 
-Descrube: Soy el lenguaje encargado de dar color, diseño y apariencia visual a las páginas web.
+Descubre: Soy el lenguaje encargado de dar color, diseño y apariencia visual a las páginas web.
 ¿Quién soy?',
 'CSS',
 '✅ Diseño restaurado. Los paneles visuales vuelven a mostrarse correctamente.',
@@ -41,7 +41,7 @@ Descrube: Soy el lenguaje encargado de dar color, diseño y apariencia visual a 
 (
 '⚡ El núcleo comienza a reaccionar.
 
-Descrube: Trabajo del lado del cliente.
+Descubre: Trabajo del lado del cliente.
 Soy un lenguaje de programación que puede validar formularios, mostrar alertas y modificar elementos dinámicamente.
 ¿Quién soy?',
 'JavaScript',
@@ -52,7 +52,7 @@ Soy un lenguaje de programación que puede validar formularios, mostrar alertas 
 (
 '🖥️ NÉMESIS protege el servidor central.
 
-Descrube: Vivo en el servidor.
+Descubre : Vivo en el servidor.
 Tambien soy un lenguaje de programación que procesa formularios y puedo conectarme a bases de datos(como pista extra, me has estado estudiando en tus clases de taller Aplicaciones para internet).
 ¿Quién soy?',
 'PHP',

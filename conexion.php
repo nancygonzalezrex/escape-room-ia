@@ -1,9 +1,18 @@
 <?php
 
-$servidor = "sql309.infinityfree.com";
-$usuario = "if0_41948221";
-$password = "rcw2ODtB0jJX";
-$base_datos = "if0_41948221_escape_room";
+if ($_SERVER["HTTP_HOST"] == "localhost") {
+    // CONEXIÓN LOCAL XAMPP
+    $servidor = "localhost";
+    $usuario = "root";
+    $password = "";
+    $base_datos = "escape_room";
+} else {
+    // CONEXIÓN HOSTING INFINITYFREE
+    $servidor = "sql309.infinityfree.com";
+    $usuario = "if0_41948221";
+    $password = "rcw2ODtB0jJX";
+    $base_datos = "if0_41948221_escape_room";
+}
 
 $conexion = new mysqli($servidor, $usuario, $password, $base_datos);
 

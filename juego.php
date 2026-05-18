@@ -64,9 +64,10 @@ $pista = $resultado->fetch_assoc();
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nivel <?php echo $nivel; ?> | EL NÚCLEO DESPERTÓ</title>
 
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="estilos.css?v=999">
 </head>
 
 <body>
