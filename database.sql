@@ -52,7 +52,7 @@ Soy un lenguaje de programación que puede validar formularios, mostrar alertas 
 (
 '🖥️ NÉMESIS protege el servidor central.
 
-Descubre : Vivo en el servidor.
+Descubre: Vivo en el servidor.
 Tambien soy un lenguaje de programación que procesa formularios y puedo conectarme a bases de datos(como pista extra, me has estado estudiando en tus clases de taller Aplicaciones para internet).
 ¿Quién soy?',
 'PHP',
@@ -63,7 +63,7 @@ Tambien soy un lenguaje de programación que procesa formularios y puedo conecta
 (
 '🧠 ÚLTIMO BLOQUEO DETECTADO.
 
-Soy el sistema utilizado para almacenar información en tablas y consultas.
+Descubre: Soy el sistema utilizado para almacenar información en tablas y consultas.
 ¿Quién soy?',
 'MySQL',
 '✅ Base de datos recuperada. NÉMESIS ha sido desactivada.',
